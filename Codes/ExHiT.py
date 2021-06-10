@@ -51,24 +51,10 @@ def format(text, verbose=False):
 
 # Preprocessing
 def preprocessing(data):
-  ''' Replacing '<br /><br />' with newline and sentence splitting.'''
-  print('Preprocessing...')
-  labels = [x['label'].numpy() for x in data]
-  preprocessed_texts = [format(str(x['text'].numpy().decode('utf-8'))) for x in data]
-  
-  sentences_samples = []
-  sentences_labels = []
-  numlist = []
-  for text, label in zip(preprocessed_texts, labels):
-    sentence_list = sent_tokenize(text)
-    for i, sentence in enumerate(sentence_list):
-      sentences_samples.append(sentence)
-      sentences_labels.append(label)
-      if i == num_max_sentences-1:
-        break
-    numlist.append(i+1)
-  print('Preprocessed!')
-  return sentences_samples, sentences_labels, numlist
+  labels = [x['label'].numpy() for x in data]#[0:num_examples]
+  #texts = [x['text'] for x in data]#[0:num_examples]
+  preprocessed_texts = [format(str(x['text'].numpy().decode('utf-8'))) for x in data] #[str(x['text'].numpy().decode('utf-8')) for x in data] #
+  return preprocessed_texts, labels
 
 # Builiding a dataset
 def build_dataset(texts, labels, shuffle=True):
