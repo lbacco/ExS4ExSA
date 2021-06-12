@@ -4,7 +4,6 @@ import os
 import sys
 import argparse
 import tabulate
-import large_text_classifier.frasexfrase as frasexfrase
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -15,7 +14,7 @@ import tensorflow_datasets as tfds
 from nltk.tokenize import sent_tokenize
 from transformers import TFRobertaModel, RobertaTokenizer
 from transformers import TFDistilBertModel, DistilBertTokenizer, DistilBertConfig
-from large_text_classifier.processors import SentenceSplitClassificationProcessor, SingleSentenceClassificationProcessor
+from Codes.processors import SentenceSplitClassificationProcessor, SingleSentenceClassificationProcessor
 
 # ------------------------------ CONSTANTS -------------------------------
 
