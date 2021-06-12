@@ -14,7 +14,7 @@ import tensorflow_datasets as tfds
 from nltk.tokenize import sent_tokenize
 from transformers import TFRobertaModel, RobertaTokenizer
 from transformers import TFDistilBertModel, DistilBertTokenizer, DistilBertConfig
-from large_text_classifier.processors import SentenceSplitClassificationProcessor, SingleSentenceClassificationProcessor
+from Codes.processors import SentenceSplitClassificationProcessor, SingleSentenceClassificationProcessor
 
 from nltk.tokenize import sent_tokenize
 
